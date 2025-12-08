@@ -34,4 +34,7 @@
   
 
 2) agar aapki git install hai already aur ssh key bhi github me save hai tab aap tab aap directly 
-  " step 9" se start karo  
+  " step 9" se start karo
+
+3) Agar git install hai aur ssh key add nahi hai git hub me tab "step 3" se start karenge,
+   aur agar ssh ket generate nahi nahi hai tu generate karnge,
