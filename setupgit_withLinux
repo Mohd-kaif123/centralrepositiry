@@ -9,7 +9,8 @@
 	
 		5) ssh-keygen -t ed25519-C "kaif123@gmail.com"  ==> for generating ke key
 	
-		6) After generating the key, copy the key and go to GITHUB> setting> SSH and GPG > new SSH > title: kaif-ubuntu > Description: paste key here and save
+		6) After generating the key, copy the key and go to GITHUB> setting> SSH and GPG >
+		   new SSH > title: kaif-ubuntu > Description: paste key here and save
 	
 		7) After step 6 then return come to the linux terminal
 	
