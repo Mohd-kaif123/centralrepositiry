@@ -1,0 +1,36 @@
+1) from beginner: 
+	Steps:- 1) which git (check git is install or not in your system)
+	
+		2) if git is not installed then install the git ==> get git
+	
+		3) git config --global user.name "kaif"  ==> for giving name
+	
+		4) git config --global user.email "kaif123@gmail.com"  ==> for giving a email
+	
+		5) ssh-keygen -t ed25519-C "kaif123@gmail.com"  ==> for generating ke key
+	
+		6) After generating the key, copy the key and go to GITHUB> setting> SSH and GPG > new SSH > title: kaif-ubuntu > Description: paste key here and save
+	
+		7) After step 6 then return come to the linux terminal
+	
+		8) ssh -T git@github.com  ==> ye cmd ssh connection test karta hai
+		   "yes" press karne ke baad "successfully authenticated" likh kar aajaega
+	
+		9) git clone git@github.com:Mohd-kaif123/centralrepositiry.git
+		   "ye command se apne linux se connect hojaega aur centralrepositiry 
+	            ke name se directory banjaegi aur uskeandar file bhi hogi jo hane save kiya hoga 
+		    aur asgar koi new  file banenge aur usko add aur commit karnege tu wo files add hojaegi"
+	
+		10) cd centralrepositiry
+	
+		11) After creating or editing the file > git staus > git add . > git commit -m "kaif commit" > git status
+	
+		12) git remote -v  ==> ye commands se dekh sakte hai ki (push) aur (fetch) kat sakte hai.
+	
+		13) git branch  ==> check git branch ki konsi branch me ho aap
+	
+		14) git push -u origin main  ==> ab push hogaeya jo hamne push kiya
+  
+
+2) agar aapki git install hai already aur ssh key bhi github me save hai tab aap tab aap directly 
+  " step 9" se start karo  
