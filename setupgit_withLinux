@@ -38,3 +38,18 @@
 
 3) Agar git install hai aur ssh key add nahi hai git hub me tab "step 3" se start karenge,
    aur agar ssh ket generate nahi nahi hai tu generate karnge,
+
+
+4) Aur jasie hamne sabko alag alag branch bana kar diya kaam karne ke liye tu ham
+   directly apne branch me pull nahi kar sakte, eg: jaise maine ek branch banmeya 
+  " kaifuser" tu mai kaifuser se "git pull orgin main" karke mai data pull nahi 
+   kar sakta apne local repo me central repo se,  pahale hame checkout karke main
+   branch me jana hoga waha jane baad, ham waha pull kar sakte hai "git pull origin main"
+   fir new data pull hojaega, fir hame checkout karke kaifuser me jana hoga aur waha se
+   "git pull --rebase origin main" karna hoga tab new data pull hojarga 
+
+#####----How to pull from main central repo in different bramch-------#####
+
+   SUMMARY====>  kaifuser branch ---> checkout ----> main branch ---> git pull origin main
+   ---> checkout ---> kaifuser branch ---> git pull --rebase origin main ---> pull successfully 
+ 
