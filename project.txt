@@ -1,2 +1,0 @@
-This is very important file of companyt
-This file successfully run in different users in a linux
