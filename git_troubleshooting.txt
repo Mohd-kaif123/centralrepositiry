@@ -1,0 +1,28 @@
+##Problem 1:- Remote Origin Already Exists ##
+
+Problem: Jab aap naya repository link add karte hain (git remote add origin), toh error aata hai ki "origin" pehle se hi hai.
+Reason: Aapne pehle koi aur URL set kiya hua tha.
+Solution:
+
+Option A (Update): git remote set-url origin <new-url>
+
+Option B (Remove & Add): git remote remove origin phir git remote add origin <new-url>
+
+## Problem 2: Push Rejected (Non-fast-forward) ##
+Problem: git push karne par error aata hai ki "updates were rejected because the tip of your current branch is behind".
+Reason: GitHub par aisi files hain jo aapke computer par nahi hain.
+Solution:
+
+Pehle GitHub se changes apne paas layein: git pull origin <branch_name>
+
+Phir push karein: git push origin <branch_name>
+
+##Problem 3: Divergent Branches ##
+Problem: Pull karte waqt Git poochta hai ki "how to reconcile divergent branches".
+Reason: Local aur Remote dono jagah alag-alag kaam ho gaya hai, Git confuse hai ki unhe kaise jode.
+Solution:
+
+Git ko merge mode me set karein: git config pull.rebase false
+
+Phir se pull karein: git pull origin <branch_name>
+
