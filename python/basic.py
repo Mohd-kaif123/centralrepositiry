@@ -55,7 +55,69 @@ print(total)
 
 # Problem 6:- find repeated words
 
-repeat = ["mango", "apple", "banana", "mango", "kiwi", "apple", "mango"]
+'''eat= ["mango", "apple", "banana", "mango", "kiwi", "apple", "mango"]
+count = {}
 for i in repeat:
-    count = { "mango", "apple", "banana", "kiwi" }
-    print(count)
+    if i in count:
+        count[i] = count[i] + 1
+    else:
+        count[i] = 1
+print(count)
+'''
+
+#..................................................
+
+# Combination problems from 1 to 6
+'''
+students = [                                     
+    {"name": "Ali", "marks":85},
+    {"name": "Sara", "marks": 42},
+    {"name": "Raj", "marks": 91},
+    {"name": "Priya", "marks":8},
+    {"name": "Kaif", "marks": 76},
+]
+total = 0
+for i in students:
+    print(i["marks"])
+    total =i["marks"] + total
+print(total)
+
+for i in students:
+    if i["marks"]>50:
+        print(i["name"], i["marks"])
+
+best_marks = 0
+best_name =""
+for i in students:
+    if i["marks"]>best_marks:
+        best_marks = i["marks"]
+        best_name = i["name"]
+print(best_marks)
+print(best_name)'''
+
+#.................................................
+
+#Combination problems:
+#practise 1:-
+'''
+words = ["hi", "hello", "hey", "namaste", "bye", "welcome"]
+count = 0
+for i in words:
+    if len(i)>4:
+        count = count+1
+        print(i)
+print(count)
+'''
+# Practise 2:-
+
+numbers = [12, 7, 3, 18, 5, 22, 9, 14]
+print("This is even no.")
+total = 0
+for i in numbers:
+    if i % 2 ==0:
+        if i > total:
+            total = i
+        print(i)
+print("This is big even no.")
+print(total)
+    
