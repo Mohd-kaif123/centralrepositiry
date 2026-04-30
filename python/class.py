@@ -41,7 +41,7 @@ Details.introduction()'''
 
 # 3 alag alg car bano
 
-class car:
+'''class car:
     def __init__(self,brand,color,speed):
         self.brand=brand
         self.color=color
@@ -61,5 +61,5 @@ cars_detail.honk()
 print("####################################")
 cars_detail=car("lemborgini","White","300Km/hr")
 cars_detail.details()
-cars_detail.honk()
+cars_detail.honk()'''
 
