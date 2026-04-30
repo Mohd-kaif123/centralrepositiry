@@ -54,8 +54,12 @@ class car:
     
     def honk(self):
         print(f"{self.brand} -- Beep Beep!")
-
+print("####################################")
 cars_detail=car("bukati","Black","280km/hr")
+cars_detail.details()
+cars_detail.honk()
+print("####################################")
+cars_detail=car("lemborgini","White","300Km/hr")
 cars_detail.details()
 cars_detail.honk()
 
