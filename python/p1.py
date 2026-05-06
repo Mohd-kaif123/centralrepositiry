@@ -1,4 +1,4 @@
-class bankaccount:
+'''class bankaccount:
     def __init__(self,owner,balance):
         self.owner=owner
         self.balance=balance
@@ -43,3 +43,36 @@ c1.deposite(50000)
 c1.overdruft(100000)
 c1.withdraw(60000)
 c1.c_balance()
+'''
+
+# Q) Bankaccount problem using abstraction
+from abc import ABC, abstractmethod
+class Bank(ABC):
+    def __init__(self,owner,balance):
+        self.owner=owner
+        self.balance=balance
+    @abstractmethod
+    def deposite(self,amount):
+        pass
+    def withdraw(self,amount):
+        pass
+    def balance_P(self):
+        pass
+class s_account(Bank):
+    def deposite(self,amount):
+        self.balance+=amount
+        print(f"Deposite Ammount: {amount}")
+        print(f"New Balance: {self.balance}")
+    def withdraw(self,amount):
+        if self.balance>amount:
+            self.balance-=amount
+            print(f"Withdraw Ammount: {amount}")
+        else:
+            print("Balance is not enough")
+    def balance_p(self):
+        print(f"Current Balance: {self.balance}")
+
+a=s_account("kaif",5000)
+a.deposite(5000)
+a.withdraw(8000)
+a.balance_p()
