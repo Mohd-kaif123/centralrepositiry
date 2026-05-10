@@ -29,7 +29,15 @@ jobs:
             working-directory: GITCI
 
             #step 5: create a source folder
-         
+
+          # step 6: package Build output as zip
+          - name: Package Build output as ZIP
+            run: |
+              mkdir output
+              cp -r src output/
+              zip -r build.zip output/
+              ls -la
+            working-directory: GITCI
           # step 7: Upload artifacts
           - name: Upload artifact
             uses: actions/upload-artifact@v4
