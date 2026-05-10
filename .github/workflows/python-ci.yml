@@ -43,8 +43,8 @@ jobs:
               zip -r build.zip output
               working-directory: GITCI
           # step 7: Upload artifacts
-          - name: Upload artifacts
-            uses: actions/upload-artifacts@v4
+          - name: Upload artifact
+            uses: actions/upload-artifact@v4
             with:
               name: build-zip
               path: GITCI/build.zip
