@@ -31,9 +31,12 @@ jobs:
             #step 5: create a source folder
           - name: Create source folder
             run: |
-              mkdir -p src
-              cp *.py src/
-              working-directory: GITCI
+              echo "=== Current directory ==="
+              pwd
+              echo "=== Files here ===" 
+              ls -la
+              echo "=== GITCI folder ==="
+              ls -la GITCI/
 
           # step 6: package Build output as zip
           - name: Package Build output as ZIP
