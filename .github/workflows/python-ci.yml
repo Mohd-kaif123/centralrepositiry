@@ -11,19 +11,42 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+          #steps 1: checkout a repository
           - name: Checkout code
             uses: actions/checkout@v3
-
+          # step 2: setup python
           - name: Set up Python
             uses: actions/setup-python@v4
             with:
                 python-version: '3.10'
+            #step 3: instal dependencies
           - name: Install dependencies
             run: pip install pytest
             working-directory: GITCI
+            #step 4: Run Tests
           - name: Run tests
             run: python test_file_writer.py
             working-directory: GITCI
+
+            #step 5: create a source folder
+          - name: Create source folder
+            run: |
+              mkdir -p src
+              cp *.py src/
+
+          # step 6: package Build output as zip
+          - name: Package Build output as ZIP
+            run: |
+              mkdir output
+              cp -r src output/
+              zip -r build.zip output
+          # step 7: Upload artifacts
+          - name: Upload artifacts
+            uses: actions/Upload-artifacts@v4
+            with:
+              name: build-zip
+              path: build.zip
+          # step 8: Notify Email
           - name: Notify Success Via Email
             if: success()
             uses: dawidd6/action-send-mail@v3
@@ -38,3 +61,8 @@ jobs:
                 Commit: ${{ github.sha }}
               to: mansoorimohdkaif786@gmail.com
               from: mansoorikaif365@gmail.com
+
+
+  # Steps 5 se lekar Steps 7 tak add kara hua hai, sarne kareya hai
+  # pahale Step 5 se kar 7 tak nahi tha isko aur advance banane ke liye hamne add kiya
+  
