@@ -24,3 +24,17 @@ jobs:
           - name: Run tests
             run: python test_file_writer.py
             working-directory: GITCI
+          - name: Notify Success Via Email
+            if: success()
+            uses: dawidd6/action-send-mail@v3
+            with:
+              server_address: smtp.gmail.com
+              server_port: 587
+              username: mansoorikaif365@gmail.com
+              password: egri bxzp rhxl otja
+              subject: "CI Build Success - ${{ github.repository }}"
+              body: |
+                The Build For ${{ github.repository }} on branch ${{ github.ref_name }} succeded.
+                Commit: ${{ github.sha }}
+              to: mansoorimohdkaif786@gmail.com
+              from: mansoorikaif365@gmail.com
