@@ -33,6 +33,7 @@ jobs:
             run: |
               mkdir -p src
               cp *.py src/
+              working-directory: GITCI
 
           # step 6: package Build output as zip
           - name: Package Build output as ZIP
@@ -40,12 +41,13 @@ jobs:
               mkdir output
               cp -r src output/
               zip -r build.zip output
+              working-directory: GITCI
           # step 7: Upload artifacts
           - name: Upload artifacts
-            uses: actions/Upload-artifacts@v4
+            uses: actions/upload-artifacts@v4
             with:
               name: build-zip
-              path: build.zip
+              path: GITCI/build.zip
           # step 8: Notify Email
           - name: Notify Success Via Email
             if: success()
@@ -65,4 +67,3 @@ jobs:
 
   # Steps 5 se lekar Steps 7 tak add kara hua hai, sarne kareya hai
   # pahale Step 5 se kar 7 tak nahi tha isko aur advance banane ke liye hamne add kiya
-  
