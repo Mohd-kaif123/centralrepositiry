@@ -1,0 +1,7 @@
+INFO: system started
+DEBUG: initializing modules
+INFO: modules initialized successfully
+WARNING: low disk space
+ERROR: failed to connect to database
+INFO: system shutdown initiated
+

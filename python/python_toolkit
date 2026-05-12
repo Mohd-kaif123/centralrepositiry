@@ -1,0 +1,12 @@
+===================
+MERI PYTHON TOOLKIT
+===================
+
+Jab number yaad rakhna ho   → variable = 0  ==> ye marks aur Numbers ke liye use hota hai
+Jab word yaad rakhna ho   → variable = ""   ==> jab ksis list me naam nikalna hota hai tab use karte hai(words) string/words/character ke liye use hota hai
+Jab count karna ho          → variable = {}
+
+Ek ek dekhna                → for loop
+Check karna                 → if/else
+Length nikalna              → len()
+Even/Odd check              → % 2 == 0
