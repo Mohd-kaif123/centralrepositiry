@@ -1,0 +1,114 @@
+pipeline {
+    any agent 
+        stages {
+            stage('Checkout') {
+                steps {
+                    echo 'Code la raha hu'
+                    git branch: 'main',
+                    url: 'https://github.com/Mohd-kaif123/python_CI.git'
+
+                }
+            }
+            stage('Build') {
+                steps {
+                    echo : 'Build ho raha hai...'
+                    sh 'mvn clean package'
+                }
+            }
+            stage('Test') {
+                steps {
+                    sh 'mvn test'
+                }
+            }
+        }
+    
+}
+
+################################################################################
+#####---------level-1----------##########
+pipeline {
+    any agent
+    stages {
+        stage('clone') {
+            steps {
+                git branch: 'main'
+                echo "Url git repo"
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                echo "Install Dependencies"
+            }
+        }
+        stage('Run Test') {
+            steps {
+                echo "Run test ho raha hai"
+            }
+        }
+    }
+}
+
+#####---------level-1----------##########
+
+pipeline {
+    any agent
+    stages {
+        stage('clone') {
+            steps {
+                git branch: 'main'
+                echo "Url git repo"
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                echo "Install Dependencies"
+            }
+        }
+        stage('Run Test') {
+            steps {
+                echo "Run test ho raha hai"
+            }
+        }
+    }
+}
+
+post {
+    success {
+        echo "program run successfull"
+    }
+    failure {
+        echo "program fail"
+    }
+}
+
+#############################################################################
+
+#####---------level-1----------##########
+pipeline {
+    agent any
+
+    environment {
+        App_Name = 'my-app'
+        Docker_registry = 'docker.io/myuser'
+        DB_pass = credentials('db-password-id') 
+    }
+    parameters {
+        string(name: 'BRANCH', defaultValue: 'main', description: 'konsi branch?')
+        booleanParam(name: 'Deploy_to_prod', defaultValue: false, description: 'production pe bhejo?')
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh "docker build -t ${Docker_registry}/${APP_NAME}:latest."
+            }
+        }
+        stage('Deploy') {
+            when {
+                expression { params.Deploy_to_prod == true }
+            }
+            steps {
+                sh "docker push ${Docker_registry}/${app_name}:latest"
+            }
+        }
+    }
+}
