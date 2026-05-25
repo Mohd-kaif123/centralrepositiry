@@ -86,3 +86,38 @@ else
 fi
 '
 ##############################################################
+: '
+read -p "Enter file Name: " file_name
+if [ -f "$file_name" ];then
+    echo "##################################"
+    echo "         File Report              "
+    echo "##################################"
+    echo "        File exists               "
+    echo "----------------------------------"
+    size=$(stat "$file_name" | grep Size | awk '{print $2}')
+    echo "    File Size: $size              "
+    echo "----------------------------------"
+    current_date=$(date)
+    echo "Today Date: $current_date         "
+else
+    echo "File not found"
+fi
+'
+##############################################################
+
+echo "#################################"
+echo "           Details               "
+echo "#################################"
+c_date=$(date)
+echo "Today : $c_date"
+echo "---------------------------------"
+c_user=$(whoami)
+echo "  Current User: $c_user          "
+
+echo "---------------------------------"
+c_dir=$(pwd)
+echo "  Current Directory: $c_dir      "
+
+echo "---------------------------------"
+t_file=$( ls | wc -l )
+echo " Total file in Current Directory: $t_file" 
