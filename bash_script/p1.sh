@@ -38,7 +38,7 @@ done
 '
 
 # --------------------- Auto Deployment Script ------------------#
-
+: '
 PROJECT_DIR="/mnt/d/project"
 FILE_NAME="My_project"
 echo "    Start Automatic Deployment    "
@@ -74,3 +74,4 @@ else
     echo "restart fail"
     exit 1;
 fi 
+'
