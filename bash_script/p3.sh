@@ -55,10 +55,27 @@ esac
 '
 
 ############################################################################
-
+: '
 server=("web1" "web2" "db1")
 echo ${server[0]}
-for server in "${server[@]}"
+echo ${server[1]}
+echo ${server[2]}
+echo "loop method"
+for srv in "${server[@]}"
 do 
-    echo "$server"
+    echo "$srv"
+done
+'
+############################################################################
+
+server=("google.com" "nginx" "firefox")
+: '
+for srv in "${server[@]}"
+do
+    ping -c 1 "$srv"
+done
+'
+for srv in "${server[@]}"
+do
+    ssh "$srv" uptime
 done
