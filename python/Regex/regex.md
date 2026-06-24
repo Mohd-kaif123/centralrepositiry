@@ -27,7 +27,7 @@ pythonimport re
 text = "Mera roll number 42 hai"
 result = re.search(r'\d+', text)
 print(result.group())  # 42
-PatternMatlab\dEk digit (0-9)\d+Ek ya zyada digits\d{10}Exactly 10 digits
+Pattern Matlab \d Ek digit (0-9) \d+ Ek ya zyada digits \d{10} Exactly 10 digits
 
 # 2. \w — Koi bhi Word/Letter
 pythontext = "Rahul123"
@@ -97,4 +97,68 @@ Pattern         Matlab              Example
 ^               String ka start     ^Hello
 $               String ka end       bye$
 []              Inme se koi ek      [abc]
+
+## ------------------------------------------------------------------------##
+
+email pattern=r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+# Part 1
+[a-zA-Z0-9._%+-]+
+
+Matlab:
+
+Symbol	    Meaning
+a-z	        small letters
+A-Z	        capital letters
+0-9	        numbers
+. _ % + -	ye characters bhi allowed
+[]	        inme se koi bhi character
++	        1 ya usse jyada
+
+Example:
+
+nikunj
+nikunj123
+nikunj_soni
+
+# Part 2
+@
+
+Matlab email me @ hona chahiye.
+
+# Part 3
+[a-zA-Z0-9.-]+
+
+Domain name.
+
+Example:
+
+gmail
+pw
+google-mail
+
+# Part 4
+\.
+
+Dot (.).
+
+Regex me dot ka special meaning hota hai.
+
+Agar actual dot chahiye to:
+
+\.
+
+likhna padta hai.
+
+# Part 5
+[a-zA-Z]{2,}
+
+Matlab:
+
+com
+org
+live
+in
+net
+
+2 ya usse jyada letters.
 
