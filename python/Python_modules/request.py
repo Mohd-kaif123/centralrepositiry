@@ -36,3 +36,44 @@ if (response.status_code==200):
 else:
     print("Website is down ")
     '''
+
+'''
+url = "https://jsonplaceholder.typicode.com/users/1"
+response= requests.get(url)
+user_data = response.json()
+print(user_data["name"])
+'''
+'''
+url = "https://jsonplaceholder.typicode.com/users/1"
+response=requests.get(url)
+user_name=response.json()
+username=response.json()
+user_email=response.json()
+print("Name:",user_name["name"])
+print("Username:",username["title"])
+print("Email:",user_email["completed"])
+'''
+
+'''
+url = "https://jsonplaceholder.typicode.com/todos/1"
+response = requests.get(url)
+
+# 1. JSON data ko variable me store karo
+todo_data = response.json()
+
+# 2. Dictionary se values nikal kar variable me rakho
+task_title = todo_data["title"]
+is_completed = todo_data["completed"]
+
+# 3. F-string ka use karke expected format me print karo
+print(f"Task: {task_title}")
+print(f"Completed: {is_completed}")
+'''
+
+import sys
+
+'''
+url =sys.argv[1]
+response =requests.get(url)
+print("Status code:",response.status_code)
+'''
