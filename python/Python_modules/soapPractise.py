@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-
+import requests
 '''
 html ='<html><body><h1>Linux</h1></body></html>'
 Soup=BeautifulSoup(html,'html.parser')
@@ -41,3 +41,34 @@ list1=soup.find_all('li')
 for list in list1:
     print(list.text)
 '''
+'''
+url = "https://www.google.com/"
+response =requests.get(url)
+
+print(response.status_code)
+soup =BeautifulSoup(response.text, 'html.parser')
+print(soup.title.text)
+'''
+'''
+html="<a href=https://www.google.com/> Google </a>"
+soup=BeautifulSoup(html,'html.parser') 
+print(soup.a.text)
+link_tag= soup.find('a')
+link_url = link_tag["href"]
+print(link_url)
+'''
+'''
+html ="<img src=cat.jpg>"
+soup =BeautifulSoup(html,'html.parser')
+img=soup.find("img")
+print(img["src"])
+'''
+'''
+html="<a href=https://github.com>GitHub</a>"
+soup=BeautifulSoup(html,'html.parser')
+print(soup.a.text)
+link_tag=soup.find('a')
+link_url=link_tag["href"]
+print(link_url)
+'''
+
