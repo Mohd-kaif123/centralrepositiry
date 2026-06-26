@@ -71,4 +71,38 @@ link_tag=soup.find('a')
 link_url=link_tag["href"]
 print(link_url)
 '''
+'''
+html="<img src=linux.png>"
+soup=BeautifulSoup(html,'html.parser')
+img=soup.find('img')
+print(img['src'])
+'''
+'''
+html="<a href=https://openai.com>OpenAI</a>"
+html1="<a href=https://google.com>Google</a>"
+html2="<a href=https://github.com>GitHub</a>"
+soup=BeautifulSoup(html,'html.parser')
+all_link=soup.find('a')
+for link in all_link:
+    print(link.text)
+    pass
+'''
 
+
+'''
+html = """
+<a href="https://openai.com">OpenAI</a>
+<a href="https://google.com">Google</a>
+<a href="https://github.com">GitHub</a>
+"""
+soup = BeautifulSoup(html, 'html.parser')
+
+# 1. Saare links ko nikala
+all_links = soup.find_all('a')
+
+# 2. For loop chalaya (yahan 'link' har ek alag-alag tag ko pakdega)
+for link in all_links:
+    # Dhyan do yahan 'soup' nahi, 'link' use kiya hai
+    print(f"{link.text} -> {link['href']}")
+
+'''
