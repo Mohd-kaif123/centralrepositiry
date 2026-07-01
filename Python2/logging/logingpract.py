@@ -40,3 +40,38 @@ def backup():
     logging.info("Backup completed")
 backup()
 '''
+'''
+logging.basicConfig(
+    filename='system.log',
+    level=logging.DEBUG,
+    format='%(asctime)s:%(levelname)s:%(message)s'
+)
+disk = 85
+if (( disk>=80 )):
+    logging.warning('Disk usage is High')
+else:
+    logging.info('Disk Usage is Normal')
+'''
+'''
+logging.basicConfig(
+    filename='system.log',
+    level=logging.DEBUG,
+    format='%(asctime)s:%(levelname)s:%(message)s'
+)
+service = "nginx"
+status = "running"
+if status == "running" :
+    logging.info(f"{service} is running")
+else:
+    logging.warning(f"{service} is stopped")
+'''
+'''
+import sys
+logging.basicConfig(
+    filename='system.log',
+    level=logging.DEBUG,
+    format='%(asctime)s:%(levelname)s:%(message)s'
+)
+name = sys.argv[1]
+logging.info(f"User {name} is logged in")
+'''
